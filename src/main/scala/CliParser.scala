@@ -5,10 +5,10 @@ case class CliParser(arguments: Seq[String]) extends ScallopConf(arguments) {
     required = true,
     short = 'n',
     descr = "Nab statement filename.")
-  val outputFilename: ScallopOption[String] = opt[String](
+  val outputDir: ScallopOption[String] = opt[String](
     short = 'o',
-    descr = "Converted output csv filename.",
-    default = Some("converted_nab_statement.csv")
+    descr = "Directory to write converted output csv to.",
+    default = Some(".")
   )
   verify()
 }

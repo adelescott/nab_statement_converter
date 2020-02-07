@@ -18,7 +18,7 @@ object Main extends App {
 
   nabStatementRowsReadResult match {
     case Right(nabStatementRows) =>
-      val outputFile = new File(cliParser.outputFilename())
+      val outputFile = new File(cliParser.outputDir() + "/converted_nab_statement.csv")
       try {
         outputFile.writeCsv[NabStatementRow](
           nabStatementRows,
