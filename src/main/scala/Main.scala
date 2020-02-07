@@ -25,8 +25,8 @@ object Main extends App {
           rfc.withHeader("Date", "Reference", "Payee", "Description", "Amount")
         )
       } catch {
-        case err: Exception => println(s"Error(s) converting Nab statement: \n ${err.toString}")
+        case err: Exception => println(s"Error(s) converting Nab statement: \n ${err.toString}\nNo output file written.")
       }
-    case Left(error) => println(s"Error(s) converting Nab statement: + ${error.toString}")
+    case Left(error) => println(s"Error(s) converting Nab statement: + ${error.toString}\nNo output file written.")
   }
 }
