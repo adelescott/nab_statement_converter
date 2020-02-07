@@ -8,7 +8,7 @@ case class CliParser(arguments: Seq[String]) extends ScallopConf(arguments) {
   val outputFilename: ScallopOption[String] = opt[String](
     short = 'o',
     descr = "Converted output csv filename.",
-    default = Some("consolidated_nab_statement.csv")
+    default = Some("converted_nab_statement.csv")
   )
   verify()
 }
