@@ -11,7 +11,7 @@ object Main extends App {
     file.asCsvReader[A](rfc.withoutHeader).toList
   }
 
-  val cliParser = CliParser(args)
+  val cliParser = CliParser(args.toIndexedSeq)
 
   val nabStatementRowsReadResults = readCsv[NabStatementRow](cliParser.nabStatementFilename())
   val nabStatementRowsReadResult = coalesceEithers(nabStatementRowsReadResults)
