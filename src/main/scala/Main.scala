@@ -30,12 +30,12 @@ object Main extends App {
       } catch {
         case err: Exception =>
           println(
-            s"Error(s) converting Nab statement: \n ${err.toString}\nNo output file written."
+            s"Error(s) writing Nab statement: \n ${err.toString}\nNo output file written."
           )
       }
     case Left(error) =>
       println(
-        s"Error(s) converting Nab statement: + ${error.toString}\nNo output file written."
+        s"Error(s) parsing and converting Nab statement: + ${error.toString}\nNo output file written."
       )
   }
 }
