@@ -8,7 +8,7 @@ object Main extends App {
 
   def readCsv[A: HeaderDecoder](filename: String): List[ReadResult[A]] = {
     val file = new File(filename)
-    file.asCsvReader[A](rfc.withoutHeader).toList
+    file.asCsvReader[A](rfc.withHeader).toList
   }
 
   val cliParser = CliParser(args.toIndexedSeq)
